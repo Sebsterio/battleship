@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`adds a new ship - 1 segment 1`] = `
+Object {
+  "hit": [Function],
+  "hits": Array [
+    0,
+  ],
+  "isSunk": [Function],
+  "length": 1,
+}
+`;

@@ -1,4 +1,4 @@
-const Ship = require("./ship");
+const Ship = require("../../ship");
 
 it("produces an ship object with the rigth length", () => {
 	expect(Ship(0).length).toEqual(0);
