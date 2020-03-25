@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "ship.js",
 	"scripts": {
-		"test": "jest --watchAll"
+		"test": "jest --testPathIgnorePatterns=./tests/ignore --watchAll"
 	},
 	"author": "",
 	"license": "ISC",

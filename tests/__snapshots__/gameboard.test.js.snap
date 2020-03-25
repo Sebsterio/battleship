@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`adds a new ship - 1 segment 1`] = `
+exports[`gameboard adds a new ship - 1 segment 1`] = `
 Object {
   "hit": [Function],
   "hits": Array [

@@ -1,6 +1,7 @@
 const Ship = require("./ship");
 
 module.exports = size => ({
+	size,
 	cells: {}, // e.g. {A1: {ship: _ref_, segment: 0}}
 
 	placeShip(x, y, length, orientation) {
@@ -47,21 +48,19 @@ module.exports = size => ({
 		this.cells = { ...this.cells, ...shipCoordsTemp };
 	},
 
-	receiveAttack(x, y) {
-		x = x.toUpperCase();
-		const coord = x + y; // concat
+	receiveAttack(coord) {
 		const cell = this.cells[coord];
-		if (cell == undefined) {
+		if (cell === undefined) {
 			this.cells[coord] = "miss";
-			return;
+			return 0;
 		}
 		cell.ship.hit(cell.segment);
 		cell.hit = true;
-
+		return 1;
 		// if (cell.ship.isSunk())
 	},
 
 	areAllShipsSunk() {
-		return Object.keys(this.cells).every(cell => cell.hit === true);
+		return Object.keys(this.cells).every(cell => this.cells[cell].hit === true);
 	}
 });
