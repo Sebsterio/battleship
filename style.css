@@ -1,0 +1,74 @@
+:root {
+	--board-size: 1;
+}
+
+body {
+	font-family: sans-serif;
+	background-color: #111;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
+
+.app {
+	display: grid;
+	grid-gap: 5px;
+	width: 50vw;
+	height: 100vw;
+}
+
+@media screen and (min-width: 650px) {
+	.app {
+		grid-template-columns: 5fr 5fr;
+		width: 90vw;
+		height: 45vw;
+		max-width: 1000px;
+		max-height: 500px;
+	}
+}
+
+.board {
+	display: grid;
+	border: 3px solid black;
+	grid-template-columns: repeat(var(--board-size), 1fr);
+}
+
+.cell {
+	border: 1px solid #222;
+	color: #333;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	user-select: none;
+}
+.p2-board .cell {
+	cursor: pointer;
+}
+
+/******************** Cells ********************/
+
+.own-ship {
+	background-color: grey;
+}
+.own-ship-hit {
+	background-color: yellow;
+}
+
+.own-ship-sunk {
+	background-color: red;
+}
+.own-board-miss {
+	background-color: black;
+	color: red;
+}
+.hit {
+	background-color: yellow;
+}
+.miss {
+	background-color: blue;
+}

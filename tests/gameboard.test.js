@@ -1,4 +1,4 @@
-const Gameboard = require("../gameboard");
+const Gameboard = require("../src/gameboard");
 
 describe("gameboard", () => {
 	//
@@ -44,7 +44,7 @@ describe("gameboard", () => {
 		const gameboard = Gameboard(2);
 		gameboard.placeShip("b", 1, 1, "horizontal");
 		expect(() => gameboard.placeShip("a", 1, 2, "horizontal")).toThrow();
-		expect(gameboard.cells).not.toMatchObject({ A1: {} });
+		expect(gameboard.cells.A1).toBe(null);
 	});
 
 	it("recieves an attack", () => {

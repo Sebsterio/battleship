@@ -6,6 +6,6 @@ module.exports = length => ({
 		this.hits[i] = 1;
 	},
 	isSunk() {
-		return this.hits.find(el => el === 0) ? false : true;
+		return this.hits.every(segment => segment === 1);
 	}
 });
